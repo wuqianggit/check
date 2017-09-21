@@ -1,0 +1,13 @@
+考勤管理系统
+
+系统主要目的：
+解决 员工考勤管理问题，实现 “无纸化”考勤，减轻公司考勤管理负担。
+
+使用技术：
+JavaWEB项目，后端主要用SpringMVC+SpringDataJpa+Hibernate等框架，前端使用EasyUI，显示用户界面。
+
+数据库名称为 check
+
+
+
+
