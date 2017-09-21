@@ -1,9 +1,6 @@
 package com.check.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  *
@@ -15,9 +12,20 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "admin")
-public class Admin extends IdEntity{
+public class Admin{
+    private Integer id; //主键
     private String username;
     private String password;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     @Column(name = "user_name",length = 20)
     public String getUsername() {
