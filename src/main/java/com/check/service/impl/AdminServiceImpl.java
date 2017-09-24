@@ -29,10 +29,6 @@ public class AdminServiceImpl implements AdminService {
      * @return 是否可以登录
      */
     @Override public Boolean checkAdmin(String username, String password) throws Exception{
-        if(StringUtils.isEmpty(username)
-                ||StringUtils.isEmpty(password)){
-            throw new RuntimeException("用户名和密码不能为空！");
-        }
         Admin admin = adminReponsitory.findByUsernameAndPassword(username, password);
         if(admin==null){
             return false;

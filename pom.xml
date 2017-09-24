@@ -38,7 +38,7 @@
                 <configuration>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <webApp>
-                        <contextPath>/${project.artifactId}</contextPath><!-- 访问的项目名称-->
+                        <contextPath>/</contextPath><!-- 访问的项目名称-->
                     </webApp>
                 </configuration>
             </plugin>
@@ -154,6 +154,15 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.9</version>
+        </dependency>
+        <!-- 其它包-->
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+        <!-- https://mvnrepository.com/artifact/net.sf.json-lib/json-lib -->
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier>
         </dependency>
     </dependencies>
 </project>
