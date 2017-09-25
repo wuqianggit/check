@@ -28,11 +28,8 @@ public class AdminServiceImpl implements AdminService {
      * @param password 密码
      * @return 是否可以登录
      */
-    @Override public Boolean checkAdmin(String username, String password) throws Exception{
+    @Override public Admin checkAdmin(String username, String password) throws Exception{
         Admin admin = adminReponsitory.findByUsernameAndPassword(username, password);
-        if(admin==null){
-            return false;
-        }
-        return true;
+        return admin;
     }
 }

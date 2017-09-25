@@ -1,5 +1,7 @@
 package com.check.service;
 
+import com.check.domain.Admin;
+
 /**
  *
  * com.check.service
@@ -10,5 +12,5 @@ package com.check.service;
  */
 public interface AdminService {
 
-    Boolean checkAdmin(String username,String password) throws Exception;
+    Admin checkAdmin(String username,String password) throws Exception;
 }

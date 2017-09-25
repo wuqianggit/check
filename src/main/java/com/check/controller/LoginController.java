@@ -1,5 +1,6 @@
 package com.check.controller;
 
+import com.check.domain.Admin;
 import com.check.service.AdminService;
 import com.check.utils.DirectRenderUtil;
 import com.check.vo.Message;
@@ -30,11 +31,12 @@ public class LoginController {
     private AdminService adminService;
 
     /**
-     * 跳转到登录页面
+     * 登录页面
      * @return
      */
     @RequestMapping(method = RequestMethod.GET)
-    public String toLoginView(){
+    public String toLoginView(HttpSession session){
+        session.invalidate();
         return "login";
     }
     /**
@@ -48,9 +50,11 @@ public class LoginController {
     public void login(HttpServletResponse response,HttpSession session,String username,String password){
         Message<String> msg=new Message<String>(false,"用户名或密码不正确!");
         try {
-            if(adminService.checkAdmin(username, password)){
+            Admin admin=adminService.checkAdmin(username,password);
+            if(admin!=null){
                 msg.setSuccess(true);
                 session.setAttribute("loginKey", UUID.randomUUID().toString());
+                session.setAttribute("admin",admin);
                 msg.setDescription(session.getAttribute("loginKey").toString());
             }
         } catch (Exception e) {
@@ -72,5 +76,4 @@ public class LoginController {
         }
         return "redirect:/";
     }
-
 }
