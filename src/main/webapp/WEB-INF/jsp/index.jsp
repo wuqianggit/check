@@ -42,7 +42,7 @@
 
 <body class="easyui-layout">
 <div data-options="region:'north',border:false" style="height:60px;background:#B3DFDA;padding:10px">
-    <div style="text-align: center">美汇园食品有限公司 考勤管理系统</div>
+    <div style="text-align: center">考勤管理系统</div>
     <div style="text-align: right">
         欢迎:${admin.username}
         <button onclick="logOff()" value="注销">注销</button>
@@ -74,7 +74,7 @@
 
 </div>
 <div data-options="region:'south',border:false" style="height:50px;background:#A9FACD;padding:10px;">
-    <div style="text-align: center"> 版权归 美汇园食品有限公司所有</div>
+    <div style="text-align: center"> 版权归 吴强所有</div>
 </div>
 <div data-options="region:'center'">
     <div id="content" class="easyui-tabs">
