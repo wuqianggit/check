@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * 销售管理系统
@@ -79,8 +80,9 @@ public class EmployeeController {
             @RequestParam(value = "size",defaultValue = "20") Integer size){
         try {
             PageRequest pageable=new PageRequest(page,size);
-            Page<EmployeeVO> resultPage=employeeService.getAll(pageable);
-            DirectRenderUtil.renderJson(response,resultPage);
+            //Page<EmployeeVO> resultPage=employeeService.getAll(pageable);
+            List<EmployeeVO> all = employeeService.getAll();
+            DirectRenderUtil.renderJson(response,all);
         } catch (Exception e) {
             throw new RuntimeException("查询所有员工信息出错！"+e);
         }

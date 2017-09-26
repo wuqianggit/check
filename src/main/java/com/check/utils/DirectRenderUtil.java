@@ -102,7 +102,8 @@ public class DirectRenderUtil {
      */
     public static void renderJson(final HttpServletResponse response, final String string, final String... headers) {
         // render(response, "application/json", string, headers);
-        renderText(response, string, headers);
+        //renderText(response, string, headers);
+        render(response,"application/json",string,headers);
     }
 
     /**
@@ -112,7 +113,7 @@ public class DirectRenderUtil {
      */
     public static void renderJson(final HttpServletResponse response, final Object object, final String... headers) {
         String jsonString = JSONObject.fromObject(object).toString();
-        renderText(response,jsonString,headers);
+        render(response,"application/json",jsonString,headers);
     }
 
     /**
@@ -125,5 +126,4 @@ public class DirectRenderUtil {
         String jsonString = JSONArray.fromObject(collection).toString();
         renderJson(response, jsonString, headers);
     }
-
 }

@@ -15,11 +15,13 @@
 </head>
 <body>
 <table id="dg" title="员工信息" class="easyui-datagrid" style="width: 100%;height: 100%;"
-       url="${pageContext.request.contextPath}/employee/listEmployee" toolbar="#toolbar" rownumbers="true" fitColumns="true" singleSelect="true">
+       url="${pageContext.request.contextPath}/employee/listEmployee"
+       toolbar="#toolbar" rownumbers="true" fitColumns="true" singleSelect="true"
+       pagination="true">
     <thead>
     <tr>
         <th field="employeeName" width="50">员工姓名</th>
-        <th field="sex" width="50">性别</th>
+        <th field="sexStr" width="50">性别</th>
         <th field="phoneNum" width="50">电话号码</th>
         <th field="address" width="50">家庭住址</th>
     </tr>

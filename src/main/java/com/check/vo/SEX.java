@@ -9,5 +9,20 @@ package com.check.vo;
  * Created by wuqiang on 2017/9/26.
  */
 public enum SEX {
-    MAN,WOMAN;
+    MAN("男"),WOMAN("女");
+
+    private String name;
+
+    SEX(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }

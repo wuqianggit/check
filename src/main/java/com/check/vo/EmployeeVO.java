@@ -20,6 +20,7 @@ public class EmployeeVO implements ToPOable<Employee>{
     private String address; //家庭住址
     private String phoneNum; //电话号码
 
+    private String sexStr; //性别，显示用
     public Integer getId() {
         return id;
     }
@@ -63,6 +64,11 @@ public class EmployeeVO implements ToPOable<Employee>{
     @Override public String toString() {
         return "EmployeeVO{" + "id=" + id + ", employeeName='" + employeeName + '\'' + ", sex=" + sex + ", address='"
                 + address + '\'' + ", phoneNum='" + phoneNum + '\'' + '}';
+    }
+
+    public String getSexStr() {
+        this.sexStr=getSex().getName();
+        return sexStr;
     }
 
     @Override public Employee toPO() {
