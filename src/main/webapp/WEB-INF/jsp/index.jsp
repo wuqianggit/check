@@ -4,25 +4,7 @@
     <title>主页</title>
     <!-- 使用easyUI的库-->
     <%@include file="/easyUILib.jsp" %>
-    <style>
-        a {
-            text-decoration: none
-        }
-
-        a:link {
-            color: #000000
-        }
-        a:visited {
-            color: #000000
-        }
-
-        a:hover {
-            color: #000000
-        }
-        a:active {
-            color:  #000000
-        }
-    </style>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/myBody.css">
     <script>
         //注销
         function logOff() {
@@ -35,7 +17,31 @@
         }
         //增加员工的按钮
         function addEmployee() {
-            alert("123");
+            var title="添加员工信息";
+            if ($('#content').tabs('exists', title)){
+                $('#content').tabs('select', title);
+            } else {
+                var content = '<iframe scrolling="auto" frameborder="0"  src="${pageContext.request.contextPath}/employee/toAddEmployeeView" style="width:100%;height:100%;"></iframe>';
+                $('#content').tabs('add',{
+                    title:title,
+                    content:content,
+                    closable:true
+                });
+            }
+        }
+        //查看员工信息
+        function listEmployee(){
+            var title="查看员工信息";
+            if ($('#content').tabs('exists', title)){
+                $('#content').tabs('select', title);
+            } else {
+                var content = '<iframe scrolling="auto" frameborder="0"  src="${pageContext.request.contextPath}/employee/toListEmployeeView" style="width:100%;height:100%;"></iframe>';
+                $('#content').tabs('add',{
+                    title:title,
+                    content:content,
+                    closable:true
+                });
+            }
         }
     </script>
 </head>
@@ -76,9 +82,10 @@
 <div data-options="region:'south',border:false" style="height:50px;background:#A9FACD;padding:10px;">
     <div style="text-align: center"> 版权归 吴强所有</div>
 </div>
+
 <div data-options="region:'center'">
-    <div id="content" class="easyui-tabs">
-        <div title="首页" data-options="closable:true" style="overflow: auto;padding:20px;" fit="true">
+    <div id="content" class="easyui-tabs" style="height: 100%;width: 100%;">
+        <div title="首页" data-options="closable:true" style="overflow: auto;padding:20px;height: 100%;width: 100%;text-align: center;" fit="true">
             欢迎使用 考勤管理系统 v1.0<br/>
             致力于 无纸化考勤
         </div>

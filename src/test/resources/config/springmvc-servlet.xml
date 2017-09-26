@@ -23,13 +23,4 @@
         <property name="prefix" value="/WEB-INF/jsp/"></property>
         <property name="suffix" value=".jsp"></property>
     </bean>
-
-    <!-- 转换器配置-->
-    <bean class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
-        <property name="converters">
-            <set>
-                <bean class="com.check.controller.converter.ToSEXConverter" />
-            </set>
-        </property>
-    </bean>
 </beans>

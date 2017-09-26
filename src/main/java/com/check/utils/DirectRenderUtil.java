@@ -1,17 +1,14 @@
 package com.check.utils;
 
-import java.io.IOException;
-import java.util.Collection;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletResponse;
-
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.Collection;
 
 /**
  * 直接输出文本到界面的帮助类
@@ -115,7 +112,7 @@ public class DirectRenderUtil {
      */
     public static void renderJson(final HttpServletResponse response, final Object object, final String... headers) {
         String jsonString = JSONObject.fromObject(object).toString();
-        render(response,"application/json; charset=UTF-8",jsonString);
+        renderText(response,jsonString,headers);
     }
 
     /**
